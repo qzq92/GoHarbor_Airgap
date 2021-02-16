@@ -1,0 +1,16 @@
+Using your client as CA authority.
+
+#Generate private key.
+openssl genrsa -des3 -out myCA.key 4096 # Enter pass phrase for myCA.key]
+
+#Generate root certificate
+openssl req -x509 -new -nodes -key myCA.key -sha256 -days 3650 -out myCA.pem
+
+#echo "Generate a secure server key."
+sudo openssl genrsa -out goharbor.io.key 4096
+
+#echo "Generate the certificate signing request."
+sudo openssl req -new -key goharbor.io.key -out goharbor.io.csr -config req.conf
+
+#echo "Create the signed certificate with host client pem file"
+sudo openssl x509 -req -in goharbor.io.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out goharbor.io.crt -days 3650 -sha256
