@@ -29,7 +29,7 @@
  - $ sudo openssl x509 -req -in goharbor.io.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out goharbor.io.crt -days 3650 -sha256
 ```
 ### Installation
-To install goharbor with addons such as support for helm chart storage(Chartmuseum), Docker image vulnerability scanner(Clair) and Docker content trust (Notary) please run the following command:
+To install goharbor (requires **harbor.v1.8.1.tar.gz file which is extracted from harbor-offline-installer-v1.8.1.tgz**) with addons such as support for helm chart storage(Chartmuseum), Docker image vulnerability scanner(Clair) and Docker content trust (Notary) please run the following command:
  - $ sudo ./install.sh --with-chartmuseum --with-clair --with-notary
 
 ### Notes:
