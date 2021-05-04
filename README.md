@@ -10,6 +10,9 @@
  - Binaries: docker, docker-compose, openssl
  - GoHarbor offline installer: harbor-offline-installer-v1.8.1.tgz (Please extract and overwrite the extracted files with the ones I have accordingly based on needs, namely the Create_CA cert for https and the service file needed to automate GoHarbor startup on reboots.) 
 
+## Documentation
+- Attached .odt file contains information on how to setup GoHarbor locally on your cluster, data migration and backup, LDAP integration, as well as cert generation required for HTTPs protocol to be used when accessing the service.
+
 ## Certificate Generation
  - You may refer to the steps that I did by using our client(PC) as Certificate Authority. There are more detailed explainations online for topics related to certificates, especially when you want to use it to enable HTTPs protocol for other applications.
 ``` bash
